@@ -2,24 +2,20 @@ import java.util.Scanner;
 public class Main{
     public static void main(String arr[]){
 
-        Scanner scanner =new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Please can you provide the scores. Provide all in separate space :");
-
-        // the inputs for grades
-        String inputs =scanner.nextLine();
-
-        String inputValues [] = inputs.split(" ");
-
-        int scores [] = new int[inputValues.length];
-
-        for ( int i=0; i < inputValues.length ; i++){
-            scores[i] = Integer.parseInt(inputValues[i]);
+        System.out.print("Please insert the number of Students grades :");
+        int N = scanner.nextInt();
+        
+        int scores [] = new int [N];
+        
+        System.out.println("Enter the grades for " + N + " students, separated by spaces:");
+        
+        for (int i = 0 ; i < N ; i++){
+            scores[i]=scanner.nextInt();
         }
 
         GradeStatistics gradeStats = new GradeStatistics(scores);
-
-        // expected output
 
         System.out.println("Values:");
         System.out.println("The maximum grade is "+" "+ gradeStats.getMaximumGrade());
